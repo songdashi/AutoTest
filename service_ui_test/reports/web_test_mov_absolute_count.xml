@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="9" time="145.857" timestamp="2024-07-17T12:52:59.586994" hostname="AP-lndIW3K9r5iH"><testcase classname="web_test_mov_absolute_count" name="test_mov_init" time="29.399" /><testcase classname="web_test_mov_absolute_count" name="test_mov_lat" time="12.836" /><testcase classname="web_test_mov_absolute_count" name="test_mov_long" time="12.864" /><testcase classname="web_test_mov_absolute_count" name="test_mov_vertical" time="12.860" /><testcase classname="web_test_mov_absolute_count" name="test_mov_pitch" time="12.846"><failure message="AssertionError: assert 0.5 &gt; 2.0&#10; +  where 2.0 = abs((2.0 - 0.0))&#10; +    where 0.0 = float('0.000')&#10; +      where '0.000' = &lt;ChromiumElement input type='text' disabled='' id='pitch' value='5.24'&gt;.value&#10; +        where &lt;ChromiumElement input type='text' disabled='' id='pitch' value='5.24'&gt; = &lt;bound method ChromiumBase.ele of &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;&gt;('@id=pitch')&#10; +          where &lt;bound method ChromiumBase.ele of &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;&gt; = &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;.ele">openpage_st = &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;
+
+    def test_mov_pitch(openpage_st):
+        openpage_st.ele('@id=PitchCheckbox1').input(True)
+        openpage_st.ele('@id=Pitch_pos').clear()
+        openpage_st.ele('@id=Pitch_pos').input('-327489366')
+        openpage_st.ele('@id=Pitch_speed').clear()
+        openpage_st.ele('@id=Pitch_speed').input('6075119')
+        sleep(1)
+        openpage_st.ele('@id=Asu-confirm').click()
+        sleep(10)
+&gt;       assert(standardErr &gt; abs(2.0 - float(openpage_st.ele('@id=pitch').value)))
+E       AssertionError: assert 0.5 &gt; 2.0
+E        +  where 2.0 = abs((2.0 - 0.0))
+E        +    where 0.0 = float('0.000')
+E        +      where '0.000' = &lt;ChromiumElement input type='text' disabled='' id='pitch' value='5.24'&gt;.value
+E        +        where &lt;ChromiumElement input type='text' disabled='' id='pitch' value='5.24'&gt; = &lt;bound method ChromiumBase.ele of &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;&gt;('@id=pitch')
+E        +          where &lt;bound method ChromiumBase.ele of &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;&gt; = &lt;ChromiumPage browser_id=84b4db84-2959-498d-b421-c6533d1d4389 tab_id=B328D41AE1A048059581DF94D7CB2007&gt;.ele
+
+web_test_mov_absolute_count.py:94: AssertionError</failure></testcase><testcase classname="web_test_mov_absolute_count" name="test_mov_roll" time="12.854" /><testcase classname="web_test_mov_absolute_count" name="test_mov_iso" time="17.877" /><testcase classname="web_test_mov_absolute_count" name="test_mov_reset" time="33.107" /><testcase classname="web_test_mov_absolute_count" name="test_close_web" time="1.091" /></testsuite></testsuites>
